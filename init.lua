@@ -49,6 +49,8 @@ minetest.register_on_joinplayer(function(player)
     inv:set_lists({ main = { ItemStack("cellestial:cell"), (wand:get_name() == "cellestial:wand" and wand) or ItemStack("cellestial:wand") } })
     inv:set_width("main", 2)
     player:set_inventory_formspec(cellestial.help_formspec)
+    player:hud_set_hotbar_image("gui_hotbar.png")
+    player:hud_set_hotbar_selected_image("gui_hotbar_selected.png")
     player:set_formspec_prepend("background9[0,0;0,0;cellestial_border.png;true;1]")
     minetest.set_player_privs(name, modlib.table.add_all(minetest.get_player_privs(name), { fly = true, fast = true }))
     if player:get_meta():get_string("cellestial_arena_ids") == "" then
