@@ -17,4 +17,4 @@ Part of the Cellestial Series: [`cellestial`](https://github.com/appgurueu/celle
 * [GitHub](https://github.com/appgurueu/cellestiall)
 * [Discord](https://discordapp.com/invite/ysP74by)
 * [ContentDB](https://content.minetest.net/packages/LMD/cellestiall)
-* [Minetest Forum](https://forum.minetest.net/viewtopic.php?f=9&t=24457&p=369920)
+* [Minetest Forum](https://forum.minetest.net/viewtopic.php?f=9&t=24457)
