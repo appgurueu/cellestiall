@@ -5,6 +5,22 @@ end
 if not cellestial then
     error("World of Life (cellestiall) depends on 3D Cellular Automata (cellestial)")
 end
+-- Hand item
+if not minetest.registered_items[":"] then
+    minetest.register_item(":", {
+        type = "none",
+        wield_image = "wieldhand.png",
+        wield_scale = {x=1, y=1, z=2.5},
+        tool_capabilities = {
+            full_punch_interval = 0.9,
+            max_drop_level = 0,
+            groupcaps = {
+                oddly_breakable_by_hand = {times={[1]=3.50,[2]=2.00,[3]=0.70}, uses=0}
+            },
+            damage_groups = {fleshy=1},
+        }
+    })
+end
 cellestiall.status = "loaded"
 cellestiall.after_cellestial_loaded = function()
     for _, item in pairs({ "cell", "wand" }) do
