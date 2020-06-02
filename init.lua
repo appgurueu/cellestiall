@@ -41,14 +41,14 @@ minetest.register_on_newplayer(function(player)
 end)
 minetest.register_on_joinplayer(function(player)
     local name = player:get_player_name()
-    player:set_properties({
+    player:set_properties{
         visual = "cube",
         visual_size = { x = 1, y = 1, z = 1 },
         collisionbox = { -0.5, -0.5, -0.5, 0.5, 0.5, 0.5 },
         pointable = false,
         textures = textures,
         eye_height = 0
-    })
+    }
     player:set_hp(20)
     player:set_breath(10)
     player:hud_set_flags{
@@ -96,9 +96,14 @@ minetest.register_on_joinplayer(function(player)
     end
 end)
 -- disable damage
-minetest.register_on_player_hpchange(function()
+minetest.register_on_player_hpchange(function(player)
+    local hp = player:get_hp()
+    if hp < 20 then
+        return 20 - hp
+    end
     return 0
 end, true)
+-- constant high noon
 minetest.register_globalstep(function()
     minetest.set_timeofday(0.5)
 end)
