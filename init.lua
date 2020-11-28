@@ -5,6 +5,11 @@ end
 if not cellestial then
     error("World of Life (cellestiall) depends on 3D Cellular Automata (cellestial)")
 end
+-- Unregister item removal chatcommands
+minetest.unregister_chatcommand"pulverize"
+minetest.unregister_chatcommand"clearinv"
+-- No inventory actions
+minetest.register_allow_player_inventory_action(function() return 0 end)
 -- Hand item
 local override = minetest.register_item
 if minetest.registered_items[":"] then
