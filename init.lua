@@ -43,11 +43,11 @@ minetest.register_on_joinplayer(function(player)
     local name = player:get_player_name()
     player:set_properties{
         visual = "cube",
-        visual_size = { x = 1, y = 1, z = 1 },
-        collisionbox = { -0.5, -0.5, -0.5, 0.5, 0.5, 0.5 },
+        visual_size = { x = 0.99, y = 0.99, z = 0.99 },
+        collisionbox = { -0.5, -0.5, -0.5, 0.4, 0.4, 0.4 },
         pointable = false,
         textures = textures,
-        eye_height = 0
+        eye_height = 0.1
     }
     player:set_hp(20)
     player:set_breath(10)
