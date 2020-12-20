@@ -46,6 +46,7 @@ minetest.register_on_newplayer(function(player)
 end)
 minetest.register_on_joinplayer(function(player)
     local name = player:get_player_name()
+    player:override_day_night_ratio(1)
     player:set_properties{
         visual = "cube",
         visual_size = { x = 0.99, y = 0.99, z = 0.99 },
